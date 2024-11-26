@@ -1,4 +1,5 @@
 import sys
+import random as r
 
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow
@@ -25,8 +26,9 @@ class MyWidget(QMainWindow):
         self.update()
 
     def draw_circle(self, qp):
+        a, b  = r.randint(1, 300), r.randint(1, 300)
         qp.setBrush(QColor(255, 255, 0))
-        rectangle = QRectF(300, 250, 300, 300)
+        rectangle = QRectF(300, 250, a, b)
         qp.drawEllipse(rectangle)
 
 
